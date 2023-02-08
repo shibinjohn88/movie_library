@@ -1,0 +1,18 @@
+.movie_display{
+    margin-top: 100px;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.poster{
+    max-height: 500px;
+}
+
+
+
+.movie_poster{
+    margin-right: 30px;
+    display: block;
+    max-height: 700px;
+}
