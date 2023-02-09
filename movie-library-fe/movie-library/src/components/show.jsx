@@ -7,11 +7,22 @@ const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
 const Show = ({ movieId }) => {
   const [movie, setMovie] = useState({});
+  const [trailerUrl, setTrailerUrl] = useState('');
 
+// change id to ${movieId}//
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/8?api_key=${API_KEY}`)
+    fetch(`https://api.themoviedb.org/3/movie/89?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => setMovie(data))
+      .catch(error => console.error(error));
+
+      fetch(`https://api.themoviedb.org/3/movie/89/videos?api_key=${API_KEY}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.results.length > 0) {
+          setTrailerUrl(`https://www.youtube.com/watch?v=${data.results[0].key}`);
+        }
+      })
       .catch(error => console.error(error));
   }, [movieId]);
 
@@ -32,7 +43,9 @@ const Show = ({ movieId }) => {
       <p>Review: {movie.review}</p>
       <p>Rating: {movie.rating}</p>
       </div>
-      <button> Watch Traitler</button>
+      <a href={trailerUrl} target="_blank">
+        <button> Watch Trailer </button>
+      </a>
        <button> Add To Watch List </button>
        <button> Leave a Review </button>
 

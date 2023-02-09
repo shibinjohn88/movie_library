@@ -11,7 +11,8 @@ const movieSchema = new Schema ( {
     original_language: {type: String },
     review: {type: String},
     rating: {type: Number},
-    genre: {type: String},
+    genres: {type: Array},
+    video: {type: Boolean},
 })
 
 const Movie = mongoose.model('Movie', movieSchema)

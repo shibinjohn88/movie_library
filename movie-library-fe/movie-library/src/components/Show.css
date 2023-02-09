@@ -1,11 +1,12 @@
 .movie_container{
-    background-color: green;
+   
 }
 
 img {
    width:450px;
    height:500px;
    float: left;
+   box-shadow: 8px 3px 3px gray;
 }
 
 .movie_description{
