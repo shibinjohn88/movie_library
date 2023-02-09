@@ -7,7 +7,7 @@ function Navbar () {
             
             <h1>Movie Library</h1>
             <h2>Home</h2>
-            <h2>My Favourites</h2>
+            <h2>My Favorites</h2>
             
         </div>
     )
