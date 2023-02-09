@@ -10,7 +10,8 @@ const movieSchema = new Schema ( {
     release_date: {type: String },
     original_language: {type: String },
     review: {type: String},
-    rating: {type: Number}
+    rating: {type: Number},
+    genre: {type: String},
 })
 
 const Movie = mongoose.model('Movie', movieSchema)

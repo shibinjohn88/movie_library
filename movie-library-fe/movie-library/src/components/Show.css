@@ -1,0 +1,30 @@
+.movie_container{
+    background-color: green;
+}
+
+img {
+   width:450px;
+   height:500px;
+   float: left;
+}
+
+.movie_description{
+    max-height: 500px;
+    margin-top: 5em;
+}
+
+
+
+.movie_display{
+    margin-top: 100px;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+h3{
+    height:200px;
+    overflow-y:scroll;
+}
