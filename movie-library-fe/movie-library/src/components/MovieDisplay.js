@@ -22,7 +22,7 @@ function MovieDisplay () {
                 <button id={key} onClick={(e) => {
                     const id = e.target.id
                     console.log(results[id].title)
-                }}>Add to My Favourites</button>
+                }}>Add to Movie Reviews</button>
                 
             </div>
             )
