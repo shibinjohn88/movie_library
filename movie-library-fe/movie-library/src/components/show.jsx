@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { RiMovie2Fill } from 'react-icons/ri'
+import { TbChecklist } from 'react-icons/tb'
+import { MdRateReview } from 'react-icons/md'
 import MovieDisplay from './MovieDisplay';
 import './Show.css'
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
+
 
 
 
@@ -34,7 +38,6 @@ const Show = ({ movieId }) => {
 
       <div className= "movie_description">
       <h1>{movie.original_title}</h1>
-      <br />
       <h3>{movie.overview}</h3>
       <br />
       <p>Genre: {movie.genre}</p>
@@ -43,11 +46,12 @@ const Show = ({ movieId }) => {
       <p>Review: {movie.review}</p>
       <p>Rating: {movie.rating}</p>
       </div>
+      <br />
       <a href={trailerUrl} target="_blank">
-        <button> Watch Trailer </button>
+        <button> <RiMovie2Fill /> </button>
       </a>
-       <button> Add To Watch List </button>
-       <button> Leave a Review </button>
+       <button> <TbChecklist /> </button>
+       <button> <MdRateReview /> </button>
 
       <div className= "more_movies">
       <MovieDisplay className="movie_display"/>
