@@ -18,6 +18,7 @@ movies.post ('/', (req, res) => {
         })
 })
 
+
 // Review - Add review to movies db -- working on routing still
 movies.post('/:id/comment', (req, res) => {
     console.log(req.body)
@@ -53,3 +54,4 @@ movies.get('/:id/edit', (req, res) => {
   })
 
 module.exports = movies
+
