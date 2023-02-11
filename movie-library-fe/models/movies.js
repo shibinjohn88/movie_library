@@ -4,7 +4,7 @@ const { Schema } = mongoose
 //schema for mongodb
 
 const movieSchema = new Schema ( {
-    original_title: { type: String, required: true },
+    original_title: { type: String, required: true, unique: true },
     poster_path: {type: String},
     overwiew: {type: String },
     release_date: {type: String },
