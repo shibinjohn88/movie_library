@@ -33,6 +33,7 @@ app.listen(process.env.PORT, () => {
     console.log('listening on port: ', process.env.PORT)
 })
 
+//Why is this here? Shouldnt this be in a model folder?
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
     () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
   )
