@@ -9,18 +9,24 @@ const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
 
 
-const Show = ({ movieId }) => {
+const Show = () => {
+  const [movieId, setMovieId] = useState(null); //temporary code delete later//
   const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState('');
 
-// change id to ${movieId}//
-  useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/89?api_key=${API_KEY}`)
+//temporary randomize code delete later//
+useEffect(() => {
+  if (!movieId) {
+    setMovieId(Math.floor(Math.random() * 1000));
+  }
+//** */
+
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => setMovie(data))
       .catch(error => console.error(error));
 
-      fetch(`https://api.themoviedb.org/3/movie/89/videos?api_key=${API_KEY}`)
+      fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => {
         if (data.results.length > 0) {
@@ -29,6 +35,7 @@ const Show = ({ movieId }) => {
       })
       .catch(error => console.error(error));
   }, [movieId]);
+  
 
   return (
     <div className= "movie_container">
@@ -42,6 +49,13 @@ const Show = ({ movieId }) => {
       <br />
       <p>Genre: {movie.genre}</p>
       <p>Release Date: {movie.release_date}</p>
+      <p>Cast: {
+    movie.cast && movie.cast.length > 0
+      ? movie.cast.map((actor, index) => (
+          <span key={index}>{actor}</span>
+        ))
+      : "Not available"
+  }</p>
       <p>Language: {movie.original_language}</p>
       <p>Review: {movie.review}</p>
       <p>Rating: {movie.rating}</p>

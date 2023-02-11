@@ -13,7 +13,11 @@ const movieSchema = new Schema ( {
     rating: {type: Number},
     genres: {type: Array},
     video: {type: Boolean},
-})
+    cast: [{
+        type: Schema.Types.ObjectId,
+        ref: "Actor"
+        }]
+        });
 
 const Movie = mongoose.model('Movie', movieSchema)
 
