@@ -29,8 +29,8 @@ app.get('/', (req, res) => {
 app.use ('/movies', movieController)
 
 
-app.listen(process.env.PORT, () => {
-    console.log('listening on port: ', process.env.PORT)
+app.listen(8080, () => {
+    console.log('listening on port: ', 8080)
 })
 
 //Why is this here? Shouldnt this be in a model folder?

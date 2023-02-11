@@ -1,9 +1,9 @@
 const express = require('express')
-const movies = express.Router ()
+const movies = express.Router()
 // const Movie = require('../models/movies.js')
 // const Comment = require('../models/comments')
 const db = require('../models')
-import { getMovieReviews } from "../services/movie-services"
+const { getMovieReviews } = require("../services/movie-services")
 
 //Index Read movies from database 
 
@@ -21,28 +21,10 @@ movies.post ('/', (req, res) => {
 
 
 // Review - Add review to movies db -- working on routing still
-movies.get('/movie/{movie_id}/review', (req, res) => {
-    const result = getMovieReviews(req, res)
-    //res.send(result)
-    console.log(req.body)
-    db.Place.findById(req.params.id)
-    .then(place => {
-        db.Comment.create(req.body)
-        .then(comment => {
-          console.log(comment)
-            place.comments.push(comment.id)
-            place.save()
-            .then(() => {
-                res.redirect(`/movie/{movie_id}/review/${req.params.id}`)
-            })
-        })
-        .catch(err => {
-            res.render('error404')
-        })
-    })
-    .catch(err => {
-        res.render('error404')
-    })
+movies.get('/:movie_id/review', async (req, res) => {
+    console.log(req.params.movie_id)
+    const result = await getMovieReviews(req.params.movie_id)
+    res.send(result)
   })
 
 // Edit - edit movie db -- working on routing still
