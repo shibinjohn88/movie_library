@@ -13,13 +13,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/show" element={<Show/>} />
-          <Route path="/addmovie" element={<AddMovie/>} /> </Routes>
+          <Route path="/addmovie" element={<AddMovie/>} />
+        </Routes>
       </Router>
     </div>
   );
 }
 
 export default App;
+
+
 
 
 
