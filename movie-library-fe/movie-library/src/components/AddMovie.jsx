@@ -90,7 +90,7 @@ const AddMovie = () => {
     onChange={(event) => setLanguage(event.target.value)}
     />
     <button type="submit">Add Movie</button>
-    {isAdding && <p>Adding movie...</p>}
+    {isAdding && <p>Adding movie..</p>}
     </form>
     <h2>add your favorite movie</h2>
     <MovieDisplay />

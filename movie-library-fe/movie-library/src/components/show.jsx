@@ -10,15 +10,13 @@ const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
 
 const Show = () => {
-  const [movieId, setMovieId] = useState(null); //temporary code delete later//
+  const [movieId] = useState(); //temporary code delete later//
   const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState('');
 
 //temporary randomize code delete later//
-useEffect(() => {
-  if (!movieId) {
-    setMovieId(Math.floor(Math.random() * 1000));
-  }
+useEffect((movieId) => {
+ 
 //** */
 
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
@@ -62,10 +60,10 @@ useEffect(() => {
       </div>
       <br />
       <a href={trailerUrl} target="_blank">
-        <button> <RiMovie2Fill /> </button>
+        <button> <RiMovie2Fill /> Watch Trailer</button>
       </a>
-       <button> <TbChecklist /> </button>
-       <button> <MdRateReview /> </button>
+       <button> <TbChecklist /> Add to Watch List</button>
+       <button> <MdRateReview /> Leave a Review</button>
 
       <div className= "more_movies">
       <MovieDisplay className="movie_display"/>
