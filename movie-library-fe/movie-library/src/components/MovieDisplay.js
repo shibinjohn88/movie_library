@@ -40,7 +40,7 @@ function MovieDisplay () {
                       } catch(err) {
                         console.error(`Error: ${err}`);
                       }
-                }}>Add to Movie Reviews</button>
+                }}>Add to Favourites</button>
                 
             </div>
             )
@@ -54,4 +54,3 @@ function MovieDisplay () {
 }
 
 export default MovieDisplay
-            
