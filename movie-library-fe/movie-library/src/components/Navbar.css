@@ -12,3 +12,6 @@
         color: red;
 }
 
+.navbar:hover{
+        opacity: 50%;
+}

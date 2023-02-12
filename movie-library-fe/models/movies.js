@@ -10,8 +10,14 @@ const movieSchema = new mongoose.Schema({
     release_date: {type: String },
     original_language: {type: String },
     review: {type: String},
-    rating: {type: Number}
-})
+    rating: {type: Number},
+    genres: {type: Array},
+    video: {type: Boolean},
+    cast: [{
+        type: Schema.Types.ObjectId,
+        ref: "Actor"
+        }]
+        });
 
 module.exports = mongoose.model('Movie', movieSchema)
 
