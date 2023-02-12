@@ -14,17 +14,31 @@ function FavouritesDisplay () {
 
     const moviesList = favourites.map((movie, key) => {
         return (
-            <div className="movie_poster" id={key}>
+            <div className="movie_poster_favourites" id={key}>
                 <div className="poster_button">
-                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster' id={key}/>
+                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster_favourites' id={key}/>
                     <h6 id={key}>Release Date:{movie.release_date}</h6>
-                    <button id={key}>Edit</button>
-                    <button id={key}>Delete</button> 
+                    
                 </div>
                 <div className="details">
-                    <h3>Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.</h3>
-                    <h3>Review: {movie.review ? movie.review : 'NA'}</h3>
-                    <h3>Rating: {movie.rating ? movie.rating : 'NA'}</h3>
+                    <h3 className="details_text">{movie.overwiew}</h3>
+                    <h3 className="details_text">Review: {movie.review ? movie.review : 'NA'}</h3>
+                    <h3 className="details_text">Rating: {movie.rating ? movie.rating : 'NA'}</h3>
+                    <button id={key} className='details_edit'>Edit</button>
+                    <button id={key} className='details_delete' onClick={async (event) => {
+                        const id = event.target.id
+                        //console.log(favourites[id]._id)
+                        try {     
+                            const response = await fetch(`http://localhost:3001/movies/${favourites[id]._id}`, {
+                              method: 'delete'}
+                              )
+                            window.location.reload(false)
+                          } catch(err) {
+                            console.error(`Error: ${err}`)
+                          }
+               
+                    }
+                     }>Delete</button> 
                 </div>
                    
             </div>

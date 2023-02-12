@@ -30,7 +30,8 @@ function MovieDisplay () {
                             "original_title": results[id].original_title,
                             "poster_path": results[id].poster_path,
                             "release_date": results[id].release_date,
-                            "original_language": results[id].original_language
+                            "original_language": results[id].original_language,
+                            "overwiew": results[id].overview
                           })
                         });
                         console.log(response);

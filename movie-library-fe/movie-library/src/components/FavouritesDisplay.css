@@ -7,17 +7,23 @@
     overflow-y: hidden;
 }
 
-.poster{
+.poster_favourites{
     max-width: 500px;
 }
 
 
 
-.movie_poster{
+.movie_poster_favourites{
     margin-right: 30px;
     display: flex;
 }
 
-.details {
-    max-height: 300px;
+.details_text {
+    height: fit-content;
+    overflow: hidden;
+}
+
+.details_delete {
+    margin-right: 10px;
+    
 }
