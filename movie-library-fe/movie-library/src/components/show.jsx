@@ -10,21 +10,19 @@ const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
 
 const Show = () => {
-  const [movieId] = useState(); //temporary code delete later//
+  const [movieId,setMovieId] = useState(); 
   const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState('');
 
-//temporary randomize code delete later//
-useEffect((movieId) => {
- 
-//** */
+useEffect(() => {
 
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
+
+    fetch(`https://api.themoviedb.org/3/movie/8?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => setMovie(data))
       .catch(error => console.error(error));
 
-      fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`)
+      fetch(`https://api.themoviedb.org/3/movie/8/videos?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => {
         if (data.results.length > 0) {
@@ -37,41 +35,54 @@ useEffect((movieId) => {
 
   return (
     <div className= "movie_container">
-      <div className="movie_img">
-      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-      </div>
-
-      <div className= "movie_description">
-      <h1>{movie.original_title}</h1>
-      <h3>{movie.overview}</h3>
-      <br />
-      <p>Genre: {movie.genre}</p>
-      <p>Release Date: {movie.release_date}</p>
-      <p>Cast: {
-    movie.cast && movie.cast.length > 0
-      ? movie.cast.map((actor, index) => (
-          <span key={index}>{actor}</span>
-        ))
-      : "Not available"
-  }</p>
-      <p>Language: {movie.original_language}</p>
-      <p>Review: {movie.review}</p>
-      <p>Rating: {movie.rating}</p>
-      </div>
-      <br />
+      <div className="movie_poster">
+    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+    className="movie_img" alt={movie.title} />
+          <br />
       <a href={trailerUrl} target="_blank">
         <button> <RiMovie2Fill /> Watch Trailer</button>
       </a>
+   
        <button> <TbChecklist /> Add to Watch List</button>
+       <br />
        <button> <MdRateReview /> Leave a Review</button>
+       </div>
+        <div className= "movie_description">
+    <h1>{movie.original_title}</h1>
+      <h3>Overview:</h3>
+        <p>{movie.overview}</p>
+        <hr />
+        <div className= "movie_info">
+      <h3>Release Date:</h3>
+        <p>{movie.release_date}</p>
+      <h3>Popularity:</h3>
+        <p>{movie.popularity}</p>
+      <h3>Vote Average:</h3>
+        <p>{movie.vote_average}</p>
+      <h3>Cast:</h3> 
+        <p>{movie.cast && movie.cast.length > 0
+            ? movie.cast.map((actor, index) => (
+             <span key={index}>{actor}</span>))
+             : "Not available"}</p>
+      <h3>Language:</h3>
+         <p>{movie.original_language}</p>
+      <h3> Review:</h3>
+         <p>{movie.review}</p>
+      <h3>Rating: </h3>
+         <p>{movie.rating}</p>
+         <hr />
+         </div>
+     
 
-      <div className= "more_movies">
-      <MovieDisplay className="movie_display"/>
-      </div>
+       </div>
+       <div className="movie_display">
+     <MovieDisplay />
+     </div>
     </div>
+     
+   
   );
   }
-
 
   
 

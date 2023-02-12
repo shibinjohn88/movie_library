@@ -19,7 +19,7 @@ function MovieDisplay () {
         return (
             <div className="movie_poster" id={key}>
                 <Link to={`/show.jsx/${movie.id}`}> {/* added */}
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster' id={key}/></Link>
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster' id={key} /></Link>
                 <h6 id={key}>Release Date:{movie.release_date}</h6>
             
                 <button id={key} onClick={async (e) => {
