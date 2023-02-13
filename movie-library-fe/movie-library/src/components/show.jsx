@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { RiMovie2Fill } from 'react-icons/ri'
-import { TbChecklist } from 'react-icons/tb'
-import { MdRateReview } from 'react-icons/md'
+// import { RiMovie2Fill } from 'react-icons/ri'
+// import { TbChecklist } from 'react-icons/tb'
+// import { MdRateReview } from 'react-icons/md'
 import MovieDisplay from './MovieDisplay';
 import './Show.css'
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
-
-
 
 
 const Show = () => {
@@ -61,11 +59,11 @@ useEffect(() => {
       <p>Rating: {movie.rating}</p>
       </div>
       <br />
-      <a href={trailerUrl} target="_blank">
+      {/* <a href={trailerUrl} target="_blank">
         <button> <RiMovie2Fill /> </button>
       </a>
        <button> <TbChecklist /> </button>
-       <button> <MdRateReview /> </button>
+       <button> <MdRateReview /> </button> */}
 
       <div className= "more_movies">
       <MovieDisplay className="movie_display"/>
