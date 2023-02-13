@@ -5,6 +5,7 @@ import Show from './components/show.jsx';
 import AddMovie from './components/AddMovie';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FavouritesDisplay from './components/FavouritesDisplay';
+import EditReview from './components/EditReview';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/show" element={<Show/>} />
           <Route path="/addmovie" element={<AddMovie/>} />
           <Route path='/favourites' element={<FavouritesDisplay/>}/>
+          <Route path='/editreview/:id' element={<EditReview/>}/>
         </Routes>
       </Router>
     </div>

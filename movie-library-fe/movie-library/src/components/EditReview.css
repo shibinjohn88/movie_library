@@ -1,0 +1,13 @@
+.edit_review {
+    display: block;
+    margin-top: 200px;
+}
+
+#review {
+    display: inline-block;
+}
+
+#rating {
+    display: inline-block;
+}
+

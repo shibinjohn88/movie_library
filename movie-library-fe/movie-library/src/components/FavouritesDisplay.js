@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './FavouritesDisplay.css'
 
 function FavouritesDisplay () {
     const [favourites, setFavourites] = useState([])
+    const navigate = useNavigate ()
     useEffect ( () => {
         fetch(`http://localhost:3001/movies`)
             .then((response) => response.json())
@@ -24,7 +26,11 @@ function FavouritesDisplay () {
                     <h3 className="details_text">{movie.overwiew}</h3>
                     <h3 className="details_text">Review: {movie.review ? movie.review : 'NA'}</h3>
                     <h3 className="details_text">Rating: {movie.rating ? movie.rating : 'NA'}</h3>
-                    <button id={key} className='details_edit'>Edit</button>
+                    <button id={key} className='details_edit' onClick={(event) => {
+                        const id = event.target.id
+                        window.location.replace(`http://localhost:3000/editreview/${favourites[id]._id}`)
+                        console.log('button clicked')
+                    }}>Edit</button>
                     <button id={key} className='details_delete' onClick={async (event) => {
                         const id = event.target.id
                         //console.log(favourites[id]._id)
