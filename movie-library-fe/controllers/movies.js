@@ -61,21 +61,34 @@ movies.put ('/:id', async (req, res) => {
         })
 })
 
-// Review - Add review to movies db -- working on routing still
+// REVIEW CRUD
+// Review - Read reviews from db
 movies.get('/:movie_id/review', async (req, res) => {
     console.log(req.params.movie_id)
     const result = await getMovieReviews(req.params.movie_id)
     res.send(result)
   })
 
-// Edit - edit movie db -- working on routing still
-movies.get('/:id/edit', (req, res) => {
-    db.Place.findById({"_id": req.params.id})
+
+// Edit - edit reviews db -- working on routing still use post route
+movies.put('/:movie_id', (req, res) => {
+    db.Place.findByIdAndUpdate(req.params.id, req.body)
     .then((movies) => {
-      res.render('movies/edit', { movies })
+      res.redirect(`movies/${req.params.movie_id}`, { movies })
     })
     .catch(err => {
-      res.render('error404')
+      res.json(err)
+    })
+  })
+
+// Delete reviews -- working on routes use delete route
+movies.delete('/:review_id/review', async (req, res) => {
+    db.Review.findByIdAndDelete({"_id": req.params.review_id})
+    .then(() => {
+        res.status (200).json ('Delete Successful')
+    })
+    .catch(err => {
+        res.json (err)
     })
   })
 

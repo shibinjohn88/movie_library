@@ -14,7 +14,7 @@ const movieSchema = new mongoose.Schema({
     genres: {type: Array},
     video: {type: Boolean},
     cast: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Actor"
         }]
         });

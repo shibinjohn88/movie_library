@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 let reviewSchema = new mongoose.Schema({
+    id: { type: String },
     movie_id: { type: String },
     author: { type: String },
     author_details: { 

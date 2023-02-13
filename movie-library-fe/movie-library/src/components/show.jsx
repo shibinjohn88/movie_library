@@ -7,8 +7,6 @@ import './Show.css'
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
 
-
-
 const Show = () => {
   const [movieId, setMovieId] = useState(null); //temporary code delete later//
   const [movie, setMovie] = useState({});

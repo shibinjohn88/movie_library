@@ -1,8 +1,4 @@
-.review-holder {
-    display: inline-block;
-}
-
-.reviews{
+.review-boxes{
     width: 70%;
     text-align: left;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -12,6 +8,14 @@
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.buttons{
-    align-items: right;
+.rating {
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    width: 100px;
+    text-align: center;
+}
+
+.author-detail{
+    width: 100px;
 }

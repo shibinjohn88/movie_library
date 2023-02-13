@@ -8,7 +8,7 @@ function Home () {
             
             <h3 className="popular" style={{marginTop: "200px", display: "flex"}}>Popular Movies</h3>
             <MovieDisplay/>
-            <ReviewMovie />
+            {/* <ReviewMovie /> */}
         </div>
         
     )
