@@ -6,7 +6,7 @@ const { Schema } = mongoose
 const movieSchema = new Schema ( {
     original_title: { type: String, required: true, unique: true },
     poster_path: {type: String},
-    overwiew: {type: String },
+    overview: {type: String },
     release_date: {type: String },
     original_language: {type: String },
     review: {type: String},
