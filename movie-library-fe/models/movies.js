@@ -1,9 +1,9 @@
 const mongoose = require ('mongoose')
-const { Schema } = mongoose
 
 //schema for mongodb
 
-const movieSchema = new Schema ( {
+const movieSchema = new mongoose.Schema({
+    movie_id: {type: Number },
     original_title: { type: String, required: true, unique: true },
     poster_path: {type: String},
     overview: {type: String },
@@ -14,12 +14,10 @@ const movieSchema = new Schema ( {
     genres: {type: Array},
     video: {type: Boolean},
     cast: [{
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Actor"
         }]
         });
 
-const Movie = mongoose.model('Movie', movieSchema)
-
-module.exports = Movie
+module.exports = mongoose.model('Movie', movieSchema)
 

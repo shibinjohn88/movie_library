@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { RiMovie2Fill } from 'react-icons/ri'
 import { TbChecklist } from 'react-icons/tb'
 import { MdRateReview } from 'react-icons/md'
+import { useParams } from "react-router-dom";
 import MovieDisplay from './MovieDisplay';
 import './Show.css'
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
@@ -13,16 +14,17 @@ const Show = () => {
   const [movieId,setMovieId] = useState(); 
   const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState('');
+  const {id} = useParams ();
 
 useEffect(() => {
 
 
-    fetch(`https://api.themoviedb.org/3/movie/8?api_key=${API_KEY}`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => setMovie(data))
       .catch(error => console.error(error));
 
-      fetch(`https://api.themoviedb.org/3/movie/8/videos?api_key=${API_KEY}`)
+      fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`)
       .then(res => res.json())
       .then(data => {
         if (data.results.length > 0) {
