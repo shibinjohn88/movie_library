@@ -1,18 +1,37 @@
 import React, { useEffect, useState } from "react";
 import styles from './ReviewMovie.css'
 
-export function ReviewMovie(data) {
-    console.log("review movie component")
+import { useParams } from 'react-router-dom';
+
+export function ReviewMovie() {
+    const { movie_id } = useParams() //will grab the id from the url
+    console.log(movie_id)
     const [reviewState, setReviewState] = useState([])
+
     useEffect(() => {
-        fetch(`http://localhost:3001/movies/505642/review`)
+        fetch(`http://localhost:3001/movies/${movie_id}/review`)
         .then((data)=> {
             data.json().then((review) => {
+                console.log(review)
                 setReviewState(review)
             })
         })
     }, [])
 
+    function deleteReview(review_id) {
+        fetch(`http://localhost:3001/movies/${review_id}/review`, {
+            method: "DELETE"
+        }).then(() => {
+            //after we complete the delete, we filter out the deleted review from out state
+            //using the review id that we passed earlier to the delete url
+            const newState = reviewState.filter((item) => {
+                return item._id !== review_id
+            })
+            setReviewState(newState)
+        })
+    }
+
+    console.log(reviewState)
     return(
         <div>
             <div style={styles} className="all-reviews">
@@ -37,13 +56,11 @@ export function ReviewMovie(data) {
                                 </div>
 
                                 <div className="buttons">
-                                    <a href={'/'}>
+                                    <a href={`/editreviews/${review._id}`}>
                                         <button className="edit-button">Edit</button>
                                     </a>
 
-                                    <form method="POST" action={`/movies/${review._id}?_method=DELETE`}>
-                                        <button className="delete-button">Delete</button>
-                                    </form>
+                                    <button className="delete-button" onClick={() => deleteReview(review._id)}>Delete</button>
                                 </div>
                             </div>
                         )

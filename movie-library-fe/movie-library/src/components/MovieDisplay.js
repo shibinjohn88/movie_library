@@ -12,7 +12,6 @@ function MovieDisplay () {
                 setResults(data.results)
             })
     }, [])
-
     const moviesList = results.map((movie, key) => {
         return (
             <div className="movie_poster" id={key}>

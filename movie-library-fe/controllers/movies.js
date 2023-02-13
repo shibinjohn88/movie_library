@@ -4,6 +4,7 @@ const movies = express.Router()
 // const Comment = require('../models/comments')
 const db = require('../models')
 const { getMovieReviews } = require("../services/movie-services")
+const { findMovieReview } = require('../services/review-services')
 
 //Index Read movies from database 
 movies.get ('/', (req, res) => {
@@ -71,24 +72,37 @@ movies.get('/:movie_id/review', async (req, res) => {
 
 
 // Edit - edit reviews db -- working on routing still use post route
-movies.put('/:movie_id', (req, res) => {
-    db.Place.findByIdAndUpdate(req.params.id, req.body)
+movies.post('/:review_id/edit-review', (req, res) => {
+    console.log(req.body)
+    db.Review.findByIdAndUpdate(req.params.review_id, {
+        author_details: {
+            username: req.body.username,
+            rating: req.body.rating
+        },
+        content: req.body["updated-content"]
+    })
     .then((movies) => {
-      res.redirect(`movies/${req.params.movie_id}`, { movies })
+      res.status(200).json ('Update Successful')
     })
     .catch(err => {
       res.json(err)
     })
   })
 
+movies.get('/:review_id/get-review', async (req, res) => {
+    const result = await findMovieReview(req.params.review_id)
+    console.log(result)
+    res.send(result)
+})
+
 // Delete reviews -- working on routes use delete route
 movies.delete('/:review_id/review', async (req, res) => {
     db.Review.findByIdAndDelete({"_id": req.params.review_id})
     .then(() => {
-        res.status (200).json ('Delete Successful')
+        res.status(200).json ('Delete Successful')
     })
     .catch(err => {
-        res.json (err)
+        res.json(err)
     })
   })
 
