@@ -24,8 +24,23 @@ function MovieDisplay () {
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
                     console.log(results[id].title)
-                  
-                }}>Add to Favourites</button>
+                    try {     
+                        const response = await fetch('http://localhost:3001/movies', {
+                          method: 'post',
+                          headers: {'content-type': 'application/json'},
+                          body: JSON.stringify({
+                            "original_title": results[id].original_title,
+                            "poster_path": results[id].poster_path,
+                            "release_date": results[id].release_date,
+                            "original_language": results[id].original_language,
+                            "overwiew": results[id].overview
+                          })
+                        });
+                        console.log(response);
+                      } catch(err) {
+                        console.error(`Error: ${err}`);
+                      }
+                }}>Add to Watchlist</button>
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
                     window.location.replace(`http://localhost:3000/show/${results[id].id}`)(results[id].id)
