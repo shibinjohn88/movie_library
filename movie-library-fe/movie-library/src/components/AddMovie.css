@@ -1,10 +1,79 @@
-.Add_Movie_Form{
-background-color: blueviolet;
- margin-top: 100px;
- top: 7em;
+.Add_Movie_Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    margin-top: 70px;
+    padding: 10px;
+  }
+  
+  .movie_title {
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #525050;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px limegreen;
+    width: 60%;
+  }
+  
+ 
+  input,
+  textarea {
+    margin-bottom: 8px;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+label{
+    margin-bottom: 5px;
+    width: 20%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: #525050;
+    color: black;
+    font-weight: 600;
+}
+
+#image {
+    height: 25px;
+    width: auto;
 }
 
 
-.movie_title{
-    margin-top: 20px;
+#title {
+    width: 50%;
+}
+
+
+#cast {
+width: 70%;
+height: 90%;
 }

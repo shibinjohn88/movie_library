@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MovieDisplay from './MovieDisplay';
+import './AddMovie.css'
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25';
 
 
@@ -11,6 +12,7 @@ const AddMovie = () => {
     const [image, setImage] = useState("");
     const [language, setLanguage] = useState("");
     const [isAdding, setIsAdding] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
     
     const handleSubmit = async (event) => {
     event.preventDefault();
@@ -44,7 +46,7 @@ const AddMovie = () => {
     <div className="Add_Movie_Form">
     <h1 className="movie_title">ADD A MOVIE</h1>
     <form onSubmit={handleSubmit}>
-    <label htmlFor="title">Title:</label>
+    <label>Title:</label>
     <input
     type="text"
     id="title"
@@ -52,15 +54,7 @@ const AddMovie = () => {
     onChange={(event) => setTitle(event.target.value)}
     />
     <br />
-    <label htmlFor="cast">Cast:</label>
-    <input
-    type="text"
-    id="cast"
-    value={cast.join(", ")}
-    onChange={(event) => setCast(event.target.value.split(", "))}
-    />
-    <br />
-    <label htmlFor="releaseDate">Release Date:</label>
+    <label>Release Date:</label>
     <input
     type="date"
     id="releaseDate"
@@ -68,31 +62,37 @@ const AddMovie = () => {
     onChange={(event) => setReleaseDate(event.target.value)}
     />
     <br />
-    <label htmlFor="description">Description:</label>
+    <label>Description:</label>
     <textarea
     id="description"
     value={description}
     onChange={(event) => setDescription(event.target.value)}
     />
     <br />
-    <label htmlFor="image">Upload Image:</label>
+    <label>Upload Image:</label>
     <input
     type="file"
     id="image"
     onChange={(event) => setImage(event.target.files[0])}
     />
     <br />
-    <label htmlFor="language">Language:</label>
-    <input
-    type="text"
-    id="language"
-    value={language}
-    onChange={(event) => setLanguage(event.target.value)}
-    />
+    <label>Language:</label>
+<select id="language" value={language} onChange={(event) => setLanguage(event.target.value)}>
+  <option value="English">English</option>
+  <option value="Spanish">Spanish</option>
+  <option value="German">German</option>
+  <option value="French">French</option>
+  <option value="Italian">Italian</option>
+  <option value="Japanese">Japanese</option>
+  <option value="Chinese">Chinese</option>
+  <option value="Russian">Russian</option>
+  <option value="Hindi">Hindi</option>
+  <option value="Arabic">Arabic</option>
+</select>
     <button type="submit">Add Movie</button>
-    {isAdding && <p>Adding movie...</p>}
+    {isAdding && <p>Adding movie..</p>}
     </form>
-    <h2>add your favorite movie</h2>
+    {isSubmitted && <p>Congratulations! You just uploaded a movie.</p>}
     <MovieDisplay />
     </div>
   );

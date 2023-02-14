@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/show" element={<Show/>} />
+          <Route path="/show.jsx/:id" element={<Show/>} />
           <Route path="/addmovie" element={<AddMovie/>} />
           <Route path="/showreviews/:movie_id" element={< ReviewMovie />} />
           <Route path="/editreviews/:review_id" element={< EditReview />} />
