@@ -15,6 +15,7 @@ const Show = () => {
   const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState('');
   const {id} = useParams ();
+  const [results, setResults] = useState([]);
 
 useEffect(() => {
 
@@ -45,7 +46,24 @@ useEffect(() => {
         <button> <RiMovie2Fill /> Watch Trailer</button>
       </a>
    
-       <button> <TbChecklist /> Add to Watch List</button>
+      <button onClick={async () => {
+  try {     
+    const response = await fetch('http://localhost:3001/movies', {
+      method: 'post',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({
+        "original_title": movie.original_title,
+        "poster_path": movie.poster_path,
+        "release_date": movie.release_date,
+        "original_language": movie.original_language
+      })
+    });
+    console.log(response);
+  } catch(err) {
+    console.error(`Error: ${err}`);
+  }
+}}>Add To Watch List</button>
+
        <br />
        <button> <MdRateReview /> Leave a Review</button>
        </div>
@@ -68,10 +86,7 @@ useEffect(() => {
              : "Not available"}</p>
       <h3>Language:</h3>
          <p>{movie.original_language}</p>
-      <h3> Review:</h3>
-         <p>{movie.review}</p>
-      <h3>Rating: </h3>
-         <p>{movie.rating}</p>
+     
          <hr />
          </div>
      
@@ -91,3 +106,10 @@ useEffect(() => {
 
 
 export default Show;
+
+
+
+
+
+
+
