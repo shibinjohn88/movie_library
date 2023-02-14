@@ -1,0 +1,22 @@
+.columns {
+    box-sizing: border-box;
+    background-color: #FAF9F6;
+    text-align: left;
+    padding: 20px;
+    margin: 40px;
+    border-radius: 15px;
+}
+
+.edit-username, .edit-rating {
+    width: 100%;
+}
+
+.edit-review {
+    width:100%;
+    height: 400px;
+}
+
+.submit-button {
+    float: right;
+    width: 50%;
+}

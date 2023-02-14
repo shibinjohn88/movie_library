@@ -1,10 +1,11 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Show from './components/show.jsx';
-import AddMovie from './components/AddMovie';
+import Show from './components/show';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import FavouritesDisplay from './components/FavouritesDisplay';
+import { ReviewMovie } from './components/ReviewMovie';
+import EditReview from './components/EditReview';
+import WatchlistDisplay from './components/WatchlistDisplay';
 
 function App() {
   return (
@@ -13,8 +14,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/show" element={<Show/>} />
-          <Route path="/addmovie" element={<AddMovie/>} />
+          <Route path="/show/:id" element={<Show/>} />
+          <Route path="/showreviews/:movie_id" element={< ReviewMovie />} />
+          <Route path="/editreviews/:review_id" element={< EditReview />} />
+          <Route path='/watchlist' element={<WatchlistDisplay />} />
         </Routes>
       </Router>
     </div>
