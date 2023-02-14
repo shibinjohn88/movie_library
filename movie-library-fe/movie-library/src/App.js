@@ -15,7 +15,6 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/show" element={<Show/>} />
           <Route path="/addmovie" element={<AddMovie/>} />
-          <Route path='/favourites' element={<FavouritesDisplay/>}/>
         </Routes>
       </Router>
     </div>
