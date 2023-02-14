@@ -5,6 +5,7 @@ import Show from './components/show';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ReviewMovie } from './components/ReviewMovie';
 import EditReview from './components/EditReview';
+import WatchlistDisplay from './components/WatchlistDisplay';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/show/:id" element={<Show/>} />
           <Route path="/showreviews/:movie_id" element={< ReviewMovie />} />
           <Route path="/editreviews/:review_id" element={< EditReview />} />
+          <Route path='/watchlist' element={<WatchlistDisplay />} />
         </Routes>
       </Router>
     </div>
