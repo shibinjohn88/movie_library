@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ReviewMovie } from './components/ReviewMovie';
 import EditReview from './components/EditReview';
 import WatchlistDisplay from './components/WatchlistDisplay';
+import WriteReview from './components/WriteReview';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/showreviews/:movie_id" element={< ReviewMovie />} />
           <Route path="/editreviews/:review_id" element={< EditReview />} />
           <Route path='/watchlist' element={<WatchlistDisplay />} />
+          <Route path='/writereview/:id' element={<WriteReview/>}/>
         </Routes>
       </Router>
     </div>
