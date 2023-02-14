@@ -4,6 +4,7 @@ import { TbChecklist } from 'react-icons/tb'
 import { MdRateReview } from 'react-icons/md'
 import { useParams } from "react-router-dom";
 import MovieDisplay from './MovieDisplay';
+import logo1 from './logo.png';
 import './Show.css'
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
@@ -38,6 +39,7 @@ useEffect(() => {
 
   return (
     <div className= "movie_container">
+      
       <div className="movie_poster">
     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
     className="movie_img" alt={movie.title} />
@@ -88,9 +90,17 @@ useEffect(() => {
          <p>{movie.original_language}</p>
      
          <hr />
+         <div class="logo-row">
+  <img src={logo1} class="logo-image" />
+  <img src={logo1} class="logo-image" />
+  <img src={logo1} class="logo-image" />
+  <img src={logo1} class="logo-image" />
+  <img src={logo1} class="logo-image" />
+  <img src={logo1} class="logo-image" />
+</div>
          </div>
      
-
+     
        </div>
        <div className="movie_display">
      <MovieDisplay />

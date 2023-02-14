@@ -19,7 +19,7 @@ function MovieDisplay () {
             <div className="movie_poster" id={key}>
                  {/* added */}
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster' id={key} />
-                <h6 id={key}>Release Date:{movie.release_date}</h6>
+                <h5 id={key}>Release Date:{movie.release_date}</h5>
             
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
