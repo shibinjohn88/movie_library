@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './MovieDisplay.css';
-import { MdFavoriteBorder } from 'react-icons/md'
-import { BsInfoCircle } from 'react-icons/bs'
+import { Link, } from 'react-router-dom'; /*added*/
 
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
@@ -20,19 +19,32 @@ function MovieDisplay () {
             <div className="movie_poster" id={key}>
                  {/* added */}
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster' id={key} />
-                <h5 id={key}>Release Date:{movie.release_date}</h5>
+                <h6 id={key}>Release Date:{movie.release_date}</h6>
             
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
                     console.log(results[id].title)
-                  
-                }}> Add To Favorites
-                    <MdFavoriteBorder />
-                </button>
+                    try {     
+                        const response = await fetch('http://localhost:3001/movies', {
+                          method: 'post',
+                          headers: {'content-type': 'application/json'},
+                          body: JSON.stringify({
+                            "original_title": results[id].original_title,
+                            "poster_path": results[id].poster_path,
+                            "release_date": results[id].release_date,
+                            "original_language": results[id].original_language,
+                            "overwiew": results[id].overview
+                          })
+                        });
+                        console.log(response);
+                      } catch(err) {
+                        console.error(`Error: ${err}`);
+                      }
+                }}>Add to Watchlist</button>
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
                     window.location.replace(`http://localhost:3000/show/${results[id].id}`)(results[id].id)
-                }}>More Info <BsInfoCircle /></button>
+                }}>Show</button>
                 
             </div>
             )
