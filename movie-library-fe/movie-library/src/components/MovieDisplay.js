@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './MovieDisplay.css';
-import { Link, } from 'react-router-dom'; /*added*/
+import { MdFavoriteBorder } from 'react-icons/md'
+import { BsInfoCircle } from 'react-icons/bs'
 
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
@@ -25,11 +26,13 @@ function MovieDisplay () {
                     const id = e.target.id
                     console.log(results[id].title)
                   
-                }}>Add to Favourites</button>
+                }}> Add To Favorites
+                    <MdFavoriteBorder />
+                </button>
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
                     window.location.replace(`http://localhost:3000/show/${results[id].id}`)(results[id].id)
-                }}>Show</button>
+                }}>More Info <BsInfoCircle /></button>
                 
             </div>
             )

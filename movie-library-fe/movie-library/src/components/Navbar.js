@@ -3,6 +3,7 @@ import './Navbar.css';
 import { GiTheaterCurtains } from 'react-icons/gi';
 import { MdOutlineLocalMovies } from 'react-icons/md';
 import { MdOutlineRateReview } from 'react-icons/md';
+import { CgChevronRightO } from 'react-icons/cg'
 import logo from './logo.png';
 
 function Navbar () {
@@ -11,12 +12,14 @@ function Navbar () {
         <div className='navbar'>
         <img  src={logo} alt="Logo" className="logo"/>
             
-            <h1 ><MdOutlineLocalMovies /> <br /> Movies</h1>
-            <h2><GiTheaterCurtains /> <br />  Home</h2>
-            <h2><MdOutlineRateReview /> <br /> Movie Reviews</h2>
+            <h2 ><MdOutlineLocalMovies /> <br /> <span className="highlighted-text">Movies</span></h2>
+  
+
+            <h2><GiTheaterCurtains /> <br /> <span className="highlighted-text"> Home</span></h2>
+            <h2><MdOutlineRateReview /> <br /> <span className="highlighted-text">Movie Reviews</span></h2>
             <form>
-        <input type="text" placeholder="Search..." />
-        <button type="submit">Go</button>
+        <input type="text" placeholder="Search Movies..." />
+        <button type="submit"><CgChevronRightO /></button>
       </form>
             
    

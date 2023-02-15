@@ -18,7 +18,8 @@
   .movie_img {
     width: 85%;
     height: auto;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 15px white , 0 0 30px 2px rgb(0, 255, 0);
+    border-radius: 5px;
   }
   
   .movie_description {
