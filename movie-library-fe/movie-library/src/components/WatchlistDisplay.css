@@ -4,17 +4,18 @@
 }
 
 .individual-movie {
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid limegreen;
     border-radius: 25px;
     margin: 20px;
     margin-top: 20px;
     padding: 40px;
     display: inline-block;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: limegreen 1.95px 1.95px 2.6px;
 }
 
 .poster_watchlist {
     align-content: center;
+    height: 700px;
 }
 
 .h6 {
@@ -28,6 +29,7 @@
 .overview_text {
     margin: auto;
     width: 700px;
+    height: 200px;
     text-align: center;
     overflow: hidden;
 }

@@ -1,6 +1,6 @@
-.columns {
+.edit-review-container {
     box-sizing: border-box;
-    background-color: #FAF9F6;
+    background-color: black;
     text-align: left;
     padding: 20px;
     margin: 40px;
@@ -18,5 +18,13 @@
 
 .submit-button {
     float: right;
-    width: 50%;
+    width: 40%;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: rgb(119, 247, 119);
+    cursor: pointer;
+    color: black;
+    border: none;
 }
