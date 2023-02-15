@@ -10,16 +10,16 @@ function MovieDisplay () {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.results)
+                // console.log(data.results)
                 setResults(data.results)
             })
     }, [])
     const moviesList = results.map((movie, key) => {
         return (
-            <div className="movie_poster" id={key}>
+            <div className="movie_poster" key={key}>
                  {/* added */}
-                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster' id={key} />
-                <h6 id={key}>Release Date:{movie.release_date}</h6>
+                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster'/>
+                <h6>Release Date:{movie.release_date}</h6>
             
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
@@ -36,14 +36,14 @@ function MovieDisplay () {
                             "overwiew": results[id].overview
                           })
                         });
-                        console.log(response);
+                        // console.log(response);
                       } catch(err) {
                         console.error(`Error: ${err}`);
                       }
                 }}>Add to Watchlist</button>
                 <button id={key} onClick={async (e) => {
                     const id = e.target.id
-                    window.location.replace(`http://localhost:3000/show/${results[id].id}`)(results[id].id)
+                    window.location.replace(`/show/${results[id].id}`)(results[id].id)
                 }}>Show</button>
                 
             </div>
