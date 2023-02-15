@@ -1,0 +1,33 @@
+.watchlist-display {
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+.individual-movie {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 40px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.poster_watchlist {
+    align-content: center;
+}
+
+.h6 {
+    text-align: left;
+}
+
+.poster_button {
+    float: left;
+}
+
+.overview_text {
+    margin: auto;
+    width: 700px;
+    text-align: center;
+    overflow: hidden;
+}

@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from './ReviewMovie.css'
-
 import { useParams } from 'react-router-dom';
 
-export function ReviewMovie() {
+export function ReviewMovie(props) {
     const { movie_id } = useParams() //will grab the id from the url
     console.log(movie_id)
     const [reviewState, setReviewState] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3001/movies/${movie_id}/review`)
+        fetch(`http://localhost:3001/movies/${props.movie_id}/review`)
         .then((data)=> {
             data.json().then((review) => {
-                console.log(review)
                 setReviewState(review)
             })
         })
@@ -31,12 +29,9 @@ export function ReviewMovie() {
         })
     }
 
-    console.log(reviewState)
     return(
         <div>
             <div style={styles} className="all-reviews">
-                <h2>Reviews</h2>
-
                 <div>
                     {reviewState.length > 0 && reviewState.map((review) => {
                         return(
