@@ -51,7 +51,7 @@ movies.delete ('/:id', async (req, res) => {
         })
 })
 
-//Update book details
+//Update movie details
 movies.put ('/:id', async (req, res) => {
     Movie.findByIdAndUpdate (req.params.id, req.body, {new: true})
         .then (data => {
