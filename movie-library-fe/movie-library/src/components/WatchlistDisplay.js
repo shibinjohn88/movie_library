@@ -43,6 +43,8 @@ export default function WatchlistDisplay() {
                     
                     <div className="details">
                         <h3 className="overview_text">{movie.overview}</h3>
+                        <h3 className="details_text">Review: {movie.review ? movie.review : 'NA'}</h3>
+                        <h3 className="details_text">Rating &#9733; {movie.rating ? movie.rating : 'NA'}</h3>
                         <ReviewMovie movie_id = {movie.movie_id} />
                         
                     </div>

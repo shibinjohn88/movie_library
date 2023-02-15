@@ -10,12 +10,32 @@ This is a mern stack application.
 
 ## Contributing
 
-Please work in your own branch and push. Features will be merged to Master using pull request. 
-Always do a git pull origin master before you push. 
+##Source Cite
 
 
-## Source Cite
-### Ying
+## Hansel 
+-bootstrap help
+https://www.youtube.com/watch?v=xdXd8BJwJ-U&t=65s
+
+-inspiration and ideas 
+https://www.youtube.com/watch?v=jc9_Bqzy2YQ&t=1055s
+
+-logo design
+https://www.canva.com/design/DAFagdrpoM0/A22e0v-noALrqDWep45mQg/edit
+
+-help with useState and rendering
+https://youtu.be/0iNDB-2fg8A
+
+-fetching api help
+https://www.w3schools.com/jsref/api_fetch.asp
+https://www.youtube.com/watch?v=cuEtnrL9-H0
+https://stackoverflow.com/questions/41921805/fetch-api-returning-an-empty-string
+
+
+
+
+
+## Ying
 - Redirection help
     - https://stackoverflow.com/questions/52887815/how-do-i-redirect-user-to-another-page-after-submit-the-form
 

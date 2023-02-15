@@ -6,8 +6,8 @@ const movieSchema = new mongoose.Schema({
     movie_id: {type: Number },
     original_title: { type: String, required: true, unique: true },
     poster_path: {type: String},
-    // overwiew: {type: String }, im keeping this here so u can see; you spelled it wrong smh
     overview: {type: String},
+    overview: {type: String },
     release_date: {type: String },
     original_language: {type: String },
     review: {type: String},

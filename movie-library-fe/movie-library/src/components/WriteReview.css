@@ -1,0 +1,30 @@
+.edit_review {
+    display: flex;
+    margin-top: 200px;
+    
+}
+
+#review {
+    width: 500px;
+    height: 250px;
+    box-shadow: 0 0 10px rgb(157, 251, 157);
+}
+
+#rating {
+    box-shadow: 0 0 10px rgb(157, 251, 157);
+}
+
+.wr_image {
+    max-height: 700px;
+    box-shadow: 0 0 10px rgb(157, 251, 157);
+}
+
+.wr_poster {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.wr_review {
+    display: inline-block;
+    margin-left: 20px;
+}
