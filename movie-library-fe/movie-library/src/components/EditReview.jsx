@@ -36,13 +36,12 @@ export default function EditReview () {
                     (
                     <div style={styles}>
                         <h2>Edit Review</h2>
-                            <div className="columns">
+                            <div className="edit-review-container">
                                 <form onSubmit={handleSubmit} className="edit-form">
                                     <div className="row">
                                         <div>
                                             <label htmlFor='name'>Username</label>
                                         </div>
-
                                         <div>
                                             <input
                                                 className='edit-username'
