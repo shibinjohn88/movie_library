@@ -1,17 +1,51 @@
-
-.navbar{
+.navbar {
+        display: flex;
         position: fixed;
-        top:0;
-        width: 100%;
+        top: 0;
+        width: 96%;
         height: 50px;
         align-items: center;
         padding: 20px;
-        display: flex;
         justify-content: space-between;
         background-color: black;
-        color: red;
-}
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 0 10px 2px limegreen;
+        opacity: 92%;
+        z-index: 100;
+        }
+        
+      
+        .navbar h2 {
+        color: rgb(181, 236, 181);
+        margin: 0 20px;
+        font-size: 18px;
+        text-align: center;
+       }
 
-.navbar:hover{
-        opacity: 50%;
-}
+       .highlighted-text:hover {
+        background-color: rgb(119, 247, 119);
+        box-shadow: 0 0 10px 2px white, 0 0 10px 2px rgb(0, 255, 0);
+        cursor: pointer;
+        color: black;
+        text-shadow: 2 2 10px 2px white;
+        border-radius: 5px;
+      }
+        
+        form {
+        top: 20px;
+        right: 20px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0px 0px 5px 2px limegreen;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        }
+        
+        .logo {
+        width: 100px;
+        height: 90px;
+        position: relative;
+        box-shadow: 0px 0px 15px 1px limegreen;
+     
+        }

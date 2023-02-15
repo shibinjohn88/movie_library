@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    margin-top: 80px;
     background-color: black;
     color: white;
   }
@@ -17,7 +18,8 @@
   .movie_img {
     width: 85%;
     height: auto;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 15px white , 0 0 30px 2px rgb(0, 255, 0);
+    border-radius: 5px;
   }
   
   .movie_description {
@@ -62,8 +64,38 @@
   .movie_display {
     flex-grow: 1;
   }
+  
 
 button:hover{
     background-color: limegreen;
     color: black;
 }
+
+
+.logo-row {
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.logo-image {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+  animation: move-logo 5s linear infinite;
+}
+
+@keyframes move-logo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+
+
+
