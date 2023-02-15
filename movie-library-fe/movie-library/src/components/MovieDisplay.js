@@ -33,10 +33,10 @@ function MovieDisplay () {
                             "poster_path": results[id].poster_path,
                             "release_date": results[id].release_date,
                             "original_language": results[id].original_language,
-                            "overwiew": results[id].overview
+                            "overview": results[id].overview
                           })
                         });
-                        // console.log(response);
+                        window.location.replace(`/watchlist`)
                       } catch(err) {
                         console.error(`Error: ${err}`);
                       }
