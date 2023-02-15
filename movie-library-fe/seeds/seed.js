@@ -10,13 +10,18 @@ async function seed() {
     await response.data.results.map(async (movie) => {
         const result = await db.Movie.create({
             movie_id: movie.id,
+            overview: movie.overview,
             original_title: movie.original_title,
             poster_path: movie.poster_path,
             release_date: movie.release_date,
             original_language: movie.original_language,
             review: movie.review,
             rating: movie.rating
-        })
+        }, (err) => {
+            if (err) {
+                console.log(err)
+            }
+    })
     })
 }
 

@@ -35,7 +35,7 @@ https://stackoverflow.com/questions/41921805/fetch-api-returning-an-empty-string
 
 
 
-# Ying
+## Ying
 - Redirection help
     - https://stackoverflow.com/questions/52887815/how-do-i-redirect-user-to-another-page-after-submit-the-form
 
@@ -47,5 +47,8 @@ https://stackoverflow.com/questions/41921805/fetch-api-returning-an-empty-string
 
 - Troubleshooting react-router-dom errors
     - https://stackoverflow.com/questions/58924415/react-router-dom-get-id-from-route-with-custom-components-and-extra-path
+
+- Hiding scrollbar for textboxes
+    - https://blog.hubspot.com/website/hide-scrollbar-css#:~:text=To%20hide%20the%20scrollbar%20and%20disable%20scrolling%2C%20we%20can%20use,page)%20or%20a%20container%20element.
 
 ## License
