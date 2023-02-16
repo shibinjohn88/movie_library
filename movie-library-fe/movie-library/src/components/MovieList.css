@@ -1,0 +1,27 @@
+.moviesContainer{
+    margin: 5px 0;
+    margin-top: 80px;
+}
+
+
+.logo-row1 {
+    display: flex;
+    overflow: scroll;
+    scroll-behavior: smooth;
+  }
+  
+  .logo1-image {
+    width: 250px;
+    height: 250px;
+    margin-right: 10px;
+    animation: move-logo 9s linear infinite;
+  }
+  
+  @keyframes move-logo1 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
