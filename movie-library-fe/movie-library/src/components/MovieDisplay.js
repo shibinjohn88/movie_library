@@ -25,7 +25,7 @@ function MovieDisplay () {
                     const id = e.target.id
                     console.log(results[id].title)
                     try {     
-                        const response = await fetch('http://localhost:3001/movies', {
+                        const response = await fetch('api/movies', {
                           method: 'post',
                           headers: {'content-type': 'application/json'},
                           body: JSON.stringify({

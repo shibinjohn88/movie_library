@@ -48,7 +48,7 @@ useEffect(() => {
    
       <button onClick={async () => {
   try {     
-    const response = await fetch('http://localhost:3001/movies', {
+    const response = await fetch('/api/movies', {
       method: 'post',
       headers: {'content-type': 'application/json'},
       body: JSON.stringify({
