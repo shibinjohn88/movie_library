@@ -51,4 +51,9 @@ https://stackoverflow.com/questions/41921805/fetch-api-returning-an-empty-string
 - Hiding scrollbar for textboxes
     - https://blog.hubspot.com/website/hide-scrollbar-css#:~:text=To%20hide%20the%20scrollbar%20and%20disable%20scrolling%2C%20we%20can%20use,page)%20or%20a%20container%20element.
 
+## Shibin
+
+cors middleware: https://expressjs.com/en/resources/middleware/cors.html
+
+
 ## License

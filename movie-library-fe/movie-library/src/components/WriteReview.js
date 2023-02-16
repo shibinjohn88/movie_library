@@ -6,7 +6,7 @@ function WriteReview () {
     const {id} = useParams ()
     const [result, setResult] = useState({})
     useEffect (() => {
-      fetch(`http://localhost:3001/movies/${id}`)
+      fetch(`/api/movies/${id}`)
         .then((response) => 
         response.json())
         .then((data) => {
@@ -27,7 +27,7 @@ function WriteReview () {
                   const review = document.getElementById('review').value
                   const rating = document.getElementById('rating').value
                   try {     
-                      const response = await fetch(`http://localhost:3001/movies/${id}`, {
+                      const response = await fetch(`/api/movies/${id}`, {
                         method: 'put',
                         headers: {'content-type': 'application/json'},
                         body: JSON.stringify({
