@@ -24,7 +24,7 @@ export default function WatchlistDisplay() {
                         <h6 id={key}>Release Date: {movie.release_date}</h6>
                         <button id={key} className='details_edit' onClick={(event) => {
                             const id = event.target.id
-                            window.location.replace(`http://localhost:3000/editreview/${Watchlist[id]._id}`)
+                            window.location.replace(`http://localhost:3000/writereview/${Watchlist[id]._id}`)
                             console.log('button clicked')
                         }}>Edit</button>
                         <button id={key} className='details_delete' onClick={async (event) => {
@@ -43,9 +43,9 @@ export default function WatchlistDisplay() {
                     
                     <div className="details">
                         <h3 className="overview_text">{movie.overview}</h3>
-                        {/* <h3 className="details_text">Review: {movie.review ? movie.review : 'NA'}</h3>
-                        <h3 className="details_text">Rating &#9733; {movie.rating ? movie.rating : 'NA'}</h3> */}
-                        <ReviewMovie movie_id = {movie.movie_id} />
+                        <h3 className="details_text">Review: {movie.review ? movie.review : 'NA'}</h3>
+                        <h3 className="details_text">Rating &#9733; {movie.rating ? movie.rating : 'NA'}</h3>
+                      
                         
                     </div>
                 </div>

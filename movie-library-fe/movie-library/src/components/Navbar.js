@@ -20,7 +20,7 @@ function Navbar () {
 
             <h2><GiTheaterCurtains /> <br /> <span className="highlighted-text"><a href='/' style={{textDecoration: "none"}}>Home</a></span></h2>
             <h2><MdOutlineRateReview /> <br /> <span className="highlighted-text"><a href='/watchlist' style={{textDecoration: "none"}}>Watchlist</a></span></h2>
-            <form>
+            <form className='navbar_form'>
                 <input type="text" placeholder="Search Movies..." />
                 <button type="submit"><CgChevronRightO /></button>
             </form>
