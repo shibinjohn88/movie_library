@@ -66,7 +66,7 @@ useEffect(() => {
   <TbChecklist />
   Add To Watch List</button>
 
-       <button> <MdRateReview /> <a href='/writereview' style={{textDecoration: "none"}}>Leave a Review</a></button>
+       <button> <MdRateReview /> Leave a Review</button>
        </div>
         <div className= "movie_description">
     <h1>{movie.original_title}</h1>
@@ -122,6 +122,11 @@ useEffect(() => {
 
 
 export default Show;
+
+
+
+
+
 
 
 
