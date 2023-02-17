@@ -8,6 +8,7 @@
     width: 500px;
     height: 250px;
     box-shadow: 0 0 10px rgb(157, 251, 157);
+    display: inline-block;
 }
 
 #rating {

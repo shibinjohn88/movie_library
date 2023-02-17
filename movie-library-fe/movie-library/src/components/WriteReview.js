@@ -20,7 +20,9 @@ function WriteReview () {
               <img src={`https://image.tmdb.org/t/p/original${result.poster_path}`} alt='movie poster' className='wr_image'/>
             </div>
             <div className="wr_review">
-              <h2>Review: <input className="text_review" id="review" defaultValue={result.review}></input></h2>
+              {/* <h2>Review: <input className="text_review" id="review" defaultValue={result.review}></input></h2> */}
+              <h2>Review: </h2>
+              <textarea className="text_review" id="review" defaultValue={result.review}></textarea>
               <h2>Rating &#9733; <input type='number' defaultValue={result.rating} id='rating'></input>
               </h2>
               <button id="submit" onClick={async () => {
