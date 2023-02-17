@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './WriteReview.css'
+import StarReview from './StarReview';
 
 function WriteReview () {
     const {id} = useParams ()
@@ -21,7 +22,7 @@ function WriteReview () {
             </div>
             <div className="wr_review">
               <h2>Review: <input className="text_review" id="review" defaultValue={result.review}></input></h2>
-              <h2>Rating &#9733; <input type='number' defaultValue={result.rating} id='rating'></input>
+              <h2>Rating &#9733; <input type='number' defaultValue={result.rating} id='rating'/><StarReview />
               </h2>
               <button id="submit" onClick={async () => {
                   const review = document.getElementById('review').value
@@ -50,3 +51,7 @@ function WriteReview () {
     }
 
 export default WriteReview
+
+
+
+
