@@ -15,7 +15,7 @@ function Navbar () {
             
             <img  src={logo} alt="Logo" className="logo"/>
                     
-            <h2 ><MdOutlineLocalMovies /> <br /> <span className="highlighted-text">Movies</span></h2>
+            <h2 ><MdOutlineLocalMovies /> <br /> <span className="highlighted-text"><a href='/MovieList' style={{textDecoration: "none"}}>Movies</a></span></h2>
         
 
             <h2><GiTheaterCurtains /> <br /> <span className="highlighted-text"><a href='/' style={{textDecoration: "none"}}>Home</a></span></h2>

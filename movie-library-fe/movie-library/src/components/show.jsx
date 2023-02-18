@@ -7,7 +7,9 @@ import logo1 from './logo.png';
 import './Show.css'
 import YouTube from 'react-youtube';
 
+
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
+
 
 
 
@@ -17,7 +19,6 @@ const Show = () => {
   const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState('');
   const {id} = useParams ();
-
 useEffect(() => {
 
 
@@ -66,7 +67,13 @@ useEffect(() => {
   <TbChecklist />
   Add To Watch List</button>
 
-       <button> <MdRateReview /> Leave a Review</button>
+
+  <button className='details_edit' onClick={() => {
+    window.location.replace(`/writereview/${id}`);
+    console.log('button clicked');
+  }}>Leave a Review</button>
+
+
        </div>
         <div className= "movie_description">
     <h1>{movie.original_title}</h1>
@@ -122,6 +129,11 @@ useEffect(() => {
 
 
 export default Show;
+
+
+
+
+
 
 
 

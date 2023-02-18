@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './MovieDisplay.css';
-import { Link, } from 'react-router-dom'; /*added*/
+
+
 
 const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
 
@@ -16,8 +17,9 @@ function MovieDisplay () {
     }, [])
     const moviesList = results.map((movie, key) => {
         return (
+          
             <div className="movie_poster" key={key}>
-                 {/* added */}
+                
                 <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster'/>
                 <h6>Release Date:{movie.release_date}</h6>
             
@@ -54,6 +56,7 @@ function MovieDisplay () {
         <div className="movie_display">
             {moviesList}
         </div>
+        
     )
 }
 
