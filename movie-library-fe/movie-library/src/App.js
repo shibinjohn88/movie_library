@@ -8,6 +8,7 @@ import { ReviewMovie } from './components/ReviewMovie';
 import EditReview from './components/EditReview';
 import WatchlistDisplay from './components/WatchlistDisplay';
 import WriteReview from './components/WriteReview';
+import SearchMovies from './components/SearchMovies.js';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/editreviews/:review_id" element={< EditReview />} />
           <Route path='/watchlist'element={<WatchlistDisplay />} />
           <Route path='/writereview/:id' element={<WriteReview/>}/>
+          <Route path="/searchmovies" element= {<SearchMovies />} />
         </Routes>
       </Router>
     </div>
