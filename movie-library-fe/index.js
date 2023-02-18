@@ -4,10 +4,16 @@ require('dotenv').config()
 const movieController = require ('./controllers/movies.js')
 const mongoose = require ('mongoose')
 const cors = require('cors')
+const axios = require('axios')
+const bodyParser = require('body-parser');
+
 
 // MIDDLEWARE
 app.use(express.json())
 //app.use(express.urlencoded({extended: true}))
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Enable all CORS Requests
 app.use(cors())
@@ -32,6 +38,34 @@ app.use ('/movies', movieController)
 app.listen(3001, () => {
     console.log('listening on port: ', 3001)
 })
+
+app.get('/main/s/:searchTerm', async (req, res) => {
+  // searches by search term, feed itunes artistId into params
+  let response = await axios.get(`http://www.omdbapi.com/?s=${req.params.searchTerm}&apikey=1269f85b`)
+  res.status(200).send(response.data)
+})
+
+app.get('/main/i/:searchTerm', async (req, res) => {
+  // searches by search term, feed itunes artistId into params
+  let response = await axios.get(`http://www.omdbapi.com/?i=${req.params.searchTerm}&apikey=1269f85b`)
+  res.status(200).send(response.data)
+})
+
+//Add searchmovies favorites to database
+app.post('/post', async (req, res) => { 
+  console.log(req.body)  
+  // Favorites.create(req.body)
+  //     .then ( data => {
+          res.status(200).json(data)
+         res.send('Movies')
+      // })
+      // .catch (error => {
+      //     console.log(error)
+      //     res.render ('error 400')
+      // })
+    
+})
+
 
 //Why is this here? Shouldnt this be in a model folder?
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
