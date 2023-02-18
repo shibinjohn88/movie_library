@@ -1,13 +1,72 @@
-button1:hover {
+body {
+	background: #141414;
+	color: #0d0303;
+} 
+
+.movie-app > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
+}
+
+.image-container {
+	position: relative;
+	transition: transform 0.2s;
+}
+
+.image-container:hover {
+	
+	transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+	opacity: 0.5;
+}
+
+.overlay {
+	position: absolute;
+	background: rgb(7, 108, 31);
+	width: 40%;
+    height:10%;
+	transition: 0.5s ease;
+	opacity: 0;
+	bottom: 410px;
+    left:100px;
+	font-size: 15px;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+    z-index: 5;
+    color: black;
+    border: 2px solid rgb(10, 10, 232);
+    border-radius:20px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: rgb(9, 243, 83); 
+    color: black; 
+    border: 2px solid #af4c4c;
+    border-radius: 12px;
+  }
+
+  .button1:hover {
     background-color: red;
     color: black;
     border-radius: 12px;
   }
   
-  h1{
-    color:darkgreen;
-  }
-
 
   .header {
   width: 100%;
@@ -50,5 +109,11 @@ button1:hover {
     width: 500px;
     height:1000px;
     text-align: left;
+
+}
+
+.inclusive {
+  width:350px;
+  height:550px;
 
 }
