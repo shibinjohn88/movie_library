@@ -55,20 +55,6 @@ app.get('/main/:searchTerm', async (req, res) => {
 // })
 
 //Add searchmovies favorites to database
-app.post('/post', async (req, res) => { 
-  console.log(req.body)  
-  Movies.create(req.body)
-      .then ( data => {
-        console.log(data)
-          res.status(200).json(data)
-         res.send('Movies')
-      })
-      .catch (error => {
-          console.log(error)
-          res.render ('error 400')
-      })
-    
-})
 
 
 

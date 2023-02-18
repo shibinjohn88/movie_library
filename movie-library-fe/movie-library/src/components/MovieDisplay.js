@@ -40,7 +40,8 @@ function MovieDisplay () {
                         });
                         window.location.replace(`/watchlist`)
                       } catch(err) {
-                        console.error(`Error: ${err}`);
+                        console.log(`Error: ${err}`);
+                    
                       }
                 }}>Add to Watchlist</button>
                 <button id={key} onClick={async (e) => {
