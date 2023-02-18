@@ -1,0 +1,54 @@
+button1:hover {
+    background-color: red;
+    color: black;
+    border-radius: 12px;
+  }
+  
+  h1{
+    color:darkgreen;
+  }
+
+
+  .header {
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  /* top: 0;
+  left: 0;
+  z-index: 10; */
+  }
+
+  .container {
+    overflow: auto;
+    height: 100vh;
+    
+  }
+  .box1{
+    border: 5x solid black;
+    padding: 2rem 2rem;
+    color:darkgreen;
+
+    
+}
+
+.box2{
+    display: inline-block;
+    border:1px solid green;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    width: 300px;
+    height:1000px;
+    color:darkgreen
+
+}
+
+.box3{
+    display: inline-block;
+    border:1px solid green;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    width: 500px;
+    height:1000px;
+    text-align: left;
+
+}
