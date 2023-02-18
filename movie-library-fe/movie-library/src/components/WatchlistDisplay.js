@@ -16,10 +16,10 @@ export default function WatchlistDisplay() {
     
     const movieList = Watchlist.map((movie, key) => {
         return(
-            <div className="individual-movie">
-                <div className="movie_poster_favourites" id={key}>
+            <div className="individual-movie" key={key}>
+                <div className="movie_poster_favourites">
                     <div className="poster_button">
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster_watchlist' id={key}/>
+                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster_watchlist'/>
                         <h6 id={key}>Release Date: {movie.release_date}</h6>
                         <button id={key} className='details_edit' onClick={(event) => {
                             const id = event.target.id
@@ -57,3 +57,4 @@ export default function WatchlistDisplay() {
         </div>
     )
 }
+
