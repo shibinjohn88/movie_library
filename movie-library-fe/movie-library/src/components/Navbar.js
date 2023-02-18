@@ -8,6 +8,7 @@ import logo from './logo.png';
 
 
 
+
 function Navbar () {
     return (
       
@@ -20,10 +21,10 @@ function Navbar () {
 
             <h2><GiTheaterCurtains /> <br /> <span className="highlighted-text"><a href='/' style={{textDecoration: "none"}}>Home</a></span></h2>
             <h2><MdOutlineRateReview /> <br /> <span className="highlighted-text"><a href='/watchlist' style={{textDecoration: "none"}}>Watchlist</a></span></h2>
-          
-            
-                <button> <CgChevronRightO  /> Search Movies </button>
-         
+            <form className='navbar_form'>
+                <input type="text" placeholder="Search Movies..." />
+                <button type="submit"><CgChevronRightO /></button>
+            </form>
             
         </div>
     )

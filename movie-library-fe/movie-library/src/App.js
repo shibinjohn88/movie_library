@@ -9,6 +9,7 @@ import EditReview from './components/EditReview';
 import WatchlistDisplay from './components/WatchlistDisplay';
 import WriteReview from './components/WriteReview';
 
+
 function App() {
   return (
     <div className="App">
