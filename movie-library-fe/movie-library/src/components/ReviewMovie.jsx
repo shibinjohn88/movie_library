@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from './ReviewMovie.css'
+import styles from './ReviewMovie.css';
 import { useParams } from 'react-router-dom';
 
 export function ReviewMovie(props) {

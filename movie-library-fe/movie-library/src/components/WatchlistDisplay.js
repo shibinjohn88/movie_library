@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ReviewMovie } from "./ReviewMovie";
 import style from './WatchlistDisplay.css'
 
 export default function WatchlistDisplay() {
     const [Watchlist, setWatchlist] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:3001/movies`)
+        fetch(`/api/movies`)
         .then((response) => 
         response.json())
         .then((data) => {
@@ -17,20 +16,20 @@ export default function WatchlistDisplay() {
     
     const movieList = Watchlist.map((movie, key) => {
         return(
-            <div className="individual-movie">
-                <div className="movie_poster_favourites" id={key}>
+            <div className="individual-movie" key={key}>
+                <div className="movie_poster_favourites">
                     <div className="poster_button">
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster_watchlist' id={key}/>
+                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt='movie poster' className='poster_watchlist'/>
                         <h6 id={key}>Release Date: {movie.release_date}</h6>
                         <button id={key} className='details_edit' onClick={(event) => {
                             const id = event.target.id
-                            window.location.replace(`http://localhost:3000/writereview/${Watchlist[id]._id}`)
+                            window.location.replace(`/writereview/${Watchlist[id]._id}`)
                             console.log('button clicked')
                         }}>Edit</button>
                         <button id={key} className='details_delete' onClick={async (event) => {
                                 const id = event.target.id
                                 try {     
-                                    const response = await fetch(`http://localhost:3001/movies/${Watchlist[id]._id}`, {
+                                    const response = await fetch(`api/movies/${Watchlist[id]._id}`, {
                                     method: 'delete'}
                                     )
                                     window.location.reload(false)
@@ -58,3 +57,4 @@ export default function WatchlistDisplay() {
         </div>
     )
 }
+

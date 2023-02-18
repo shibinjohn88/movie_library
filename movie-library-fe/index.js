@@ -27,16 +27,16 @@ app.listen(80, function () {
 })
 
 //Index
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('Hello world!')
 })
 
 //Movies
-app.use ('/movies', movieController)
+app.use ('/api/movies', movieController)
 
 
-app.listen(3001, () => {
-    console.log('listening on port: ', 3001)
+app.listen(process.env.PORT, () => {
+    console.log('listening on port: ', process.env.PORT)
 })
 
 app.get('/main/s/:searchTerm', async (req, res) => {
@@ -67,7 +67,7 @@ app.post('/post', async (req, res) => {
 })
 
 
-//Why is this here? Shouldnt this be in a model folder?
+
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
     () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
   )
