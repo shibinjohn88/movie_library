@@ -8,7 +8,7 @@ import './Show.css'
 import YouTube from 'react-youtube';
 
 
-const API_KEY = '2186c8fcda107afc8d4e5f502d9ebd25'
+const API_KEY = process.env.REACT_APP_API_KEY
 
 
 
